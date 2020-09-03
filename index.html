@@ -26,27 +26,21 @@
     .wrap .wf_item img{
         width: 100%;
         display: block;
+        opacity: 0;
+        transition:opacity  1s;
     }
     </style>
 </head>
 <body>
 
     <div class="wrap js_wrap">
-        <div class="wf_item"><img src="./image/1.jpg" ></div>
-        <div class="wf_item"><img src="./image/2.jpg" ></div>
-        <div class="wf_item"><img src="./image/3.jpg" ></div>
-        <div class="wf_item"><img src="./image/4.jpg" ></div>
-        <div class="wf_item"><img src="./image/5.jpg" ></div>
-        <div class="wf_item"><img src="./image/6.jpg" ></div>
-        <div class="wf_item"><img src="./image/7.jpg" ></div>
-        <div class="wf_item"><img src="./image/8.jpg" ></div>
-        <div class="wf_item"><img src="./image/9.jpg" ></div>
-        <div class="wf_item"><img src="./image/10.jpg" ></div>
-        
+       
     </div>
-    <script src="js/index.js"></script>
+    <script src="js/index1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script>
-    var arr=[
+    var arr0=[
         {
             imgUrl:"./image/1.jpg",
             imgWidth:'189',
@@ -92,11 +86,72 @@
             imgWidth:'597',
             imgHeight:'593'
         },
-       
+        {
+            imgUrl:"./image/10.jpg",
+            imgWidth:'620',
+            imgHeight:'835'
+        },
+        {
+            imgUrl:"./image/11.jpg",
+            imgWidth:'400',
+            imgHeight:'400'
+        }, {
+            imgUrl:"./image/6.jpg",
+            imgWidth:'533',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/7.jpg",
+            imgWidth:'1920',
+            imgHeight:'1200'
+        },
+        {
+            imgUrl:"./image/8.jpg",
+            imgWidth:'526',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/9.jpg",
+            imgWidth:'597',
+            imgHeight:'593'
+        },
+        {
+            imgUrl:"./image/10.jpg",
+            imgWidth:'620',
+            imgHeight:'835'
+        }, {
+            imgUrl:"./image/6.jpg",
+            imgWidth:'533',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/7.jpg",
+            imgWidth:'1920',
+            imgHeight:'1200'
+        },
+        {
+            imgUrl:"./image/8.jpg",
+            imgWidth:'526',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/9.jpg",
+            imgWidth:'597',
+            imgHeight:'593'
+        },
+        {
+            imgUrl:"./image/10.jpg",
+            imgWidth:'620',
+            imgHeight:'835'
+        },
 
     ]
     
-    
+
+    new Waterfall('js_wrap',{
+        cloum:5,
+        gap:10
+    }).inIt()
     
     
     </script>
