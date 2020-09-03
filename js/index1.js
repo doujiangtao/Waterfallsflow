@@ -4,10 +4,13 @@
         this.oWrapper = doc.getElementsByClassName(wrapper)[0];
         this.cloum = opt.cloum;
         this.gap = opt.gap;
+        this.text=opt.text;
+        this.textHiehgt=this.text?opt.textHiehgt:0;
         this.itemWidth = (this.oWrapper.offsetWidth - (this.cloum - 1) * this.gap) / this.cloum;
         this.pageNum = 0;
         this.pageSize = 0;
         this.heightArr = [];
+        
     }
 
 
@@ -47,13 +50,22 @@
             data.forEach((elem, index) => {
                 var oItem = doc.createElement('div'),
                     oImg = new Image(),
+                    oTitle=doc.createElement('div'),
+                    oA=doc.createElement('a'),
                     itemLeft = (index + 1) % _self.cloum === 1 ? '0' : index * (_self.itemWidth + _self.gap);
                     oItem.className = 'wf_item';
                     oItem.style.width = _self.itemWidth + 'px';
-                    oItem.style.height=parseInt(elem.imgHeight*_self.itemWidth/elem.imgWidth)+'px';
+                    oItem.style.height=parseInt(elem.imgHeight*_self.itemWidth/elem.imgWidth)+_self.textHiehgt+'px';
                     oItem.setAttribute('arr',index)
                     oImg.src=elem.imgUrl;
-                    oItem.appendChild(oImg);
+                    oA.href="http://www.baidu.com";
+                    oA.appendChild(oImg);
+                    oItem.appendChild(oA);
+                    if(_self.text){
+                        oTitle.innerHTML="<p>测试文本</p>";
+                        oTitle.className='title-box';
+                    }
+                    oItem.appendChild(oTitle);
                     _self.oWrapper.appendChild(oItem);
                     oItems=doc.getElementsByClassName('wf_item');
                     if (index < _self.cloum && pageNum==0) {
