@@ -43,43 +43,41 @@
             }
         },
         renderList: function (data,pageNum) {
-            var _self = this,
-                oItems=null,
-                minIdx=-1,
-                idx=0;
+            var oItems=null,
+                minIdx=-1;
             data.forEach((elem, index) => {
+                var minIdx=getMinIndex(this.heightArr);
                 var oItem = doc.createElement('div'),
                     oImg = new Image(),
                     oTitle=doc.createElement('div'),
                     oA=doc.createElement('a'),
-                    itemLeft = (index + 1) % _self.cloum === 1 ? '0' : index * (_self.itemWidth + _self.gap);
+                    itemLeft = (index + 1) % this.cloum === 1 ? '0' : index * (this.itemWidth + this.gap);
                     oItem.className = 'wf_item';
-                    oItem.style.width = _self.itemWidth + 'px';
-                    oItem.style.height=parseInt(elem.imgHeight*_self.itemWidth/elem.imgWidth)+_self.textHiehgt+'px';
+                    oItem.style.width = this.itemWidth + 'px';
+                    oItem.style.height=elem.imgHeight*this.itemWidth/elem.imgWidth+this.textHiehgt+'px';
                     oItem.setAttribute('arr',index)
                     oImg.src=elem.imgUrl;
                     oA.href="http://www.baidu.com";
                     oA.appendChild(oImg);
                     oItem.appendChild(oA);
-                    if(_self.text){
+                    if(this.text){
                         oTitle.innerHTML="<p>测试文本</p>";
                         oTitle.className='title-box';
                     }
                     oItem.appendChild(oTitle);
-                    _self.oWrapper.appendChild(oItem);
+                    this.oWrapper.appendChild(oItem);
                     oItems=doc.getElementsByClassName('wf_item');
-                    if (index < _self.cloum && pageNum==0) {
-                         _self.heightArr.push(oItem.offsetHeight);
+                    if (index < this.cloum && pageNum==0) {
+                        this.heightArr.push(oItem.offsetHeight);
                           oItem.style.top = 0 + "px";
                           oItem.style.left = itemLeft + "px";
                     }else{
-                        minIdx=getMinIndex(_self.heightArr);
                         oItem.style.left = oItems[minIdx].offsetLeft + "px";
-                        oItem.style.top = (_self.heightArr[minIdx]+_self.gap)+ "px";
-                        _self.heightArr[minIdx]+=(oItem.offsetHeight+_self.gap);
+                        oItem.style.top = (this.heightArr[minIdx]+this.gap)+ "px";
+                        this.heightArr[minIdx]+=(oItem.offsetHeight+this.gap);
                     }
                     oImg.style.opacity=1;
-            });
+            },this);
         }
     }
 
