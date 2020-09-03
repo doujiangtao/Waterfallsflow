@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+    .wrap{
+        width: 1200px;
+        height: 300px;
+        margin:0 auto;
+        position: relative;
+    }
+
+    .wrap .wf_item{
+        position: absolute;
+        background: #ddd;
+        overflow: hidden;
+        
+    }
+    .wrap .wf_item img{
+        width: 100%;
+        display: block;
+        opacity: 0;
+        transition:opacity  1s;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="wrap js_wrap">
+       
+    </div>
+    <script src="js/index1.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+    var arr0=[
+        {
+            imgUrl:"./image/1.jpg",
+            imgWidth:'189',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/2.jpg",
+            imgWidth:'200',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/3.jpg",
+            imgWidth:'466',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/4.jpg",
+            imgWidth:'500',
+            imgHeight:'313'
+        },
+        {
+            imgUrl:"./image/5.jpg",
+            imgWidth:'533',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/6.jpg",
+            imgWidth:'533',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/7.jpg",
+            imgWidth:'1920',
+            imgHeight:'1200'
+        },
+        {
+            imgUrl:"./image/8.jpg",
+            imgWidth:'526',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/9.jpg",
+            imgWidth:'597',
+            imgHeight:'593'
+        },
+        {
+            imgUrl:"./image/10.jpg",
+            imgWidth:'620',
+            imgHeight:'835'
+        },
+        {
+            imgUrl:"./image/11.jpg",
+            imgWidth:'400',
+            imgHeight:'400'
+        }, {
+            imgUrl:"./image/6.jpg",
+            imgWidth:'533',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/7.jpg",
+            imgWidth:'1920',
+            imgHeight:'1200'
+        },
+        {
+            imgUrl:"./image/8.jpg",
+            imgWidth:'526',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/9.jpg",
+            imgWidth:'597',
+            imgHeight:'593'
+        },
+        {
+            imgUrl:"./image/10.jpg",
+            imgWidth:'620',
+            imgHeight:'835'
+        }, {
+            imgUrl:"./image/6.jpg",
+            imgWidth:'533',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/7.jpg",
+            imgWidth:'1920',
+            imgHeight:'1200'
+        },
+        {
+            imgUrl:"./image/8.jpg",
+            imgWidth:'526',
+            imgHeight:'300'
+        },
+        {
+            imgUrl:"./image/9.jpg",
+            imgWidth:'597',
+            imgHeight:'593'
+        },
+        {
+            imgUrl:"./image/10.jpg",
+            imgWidth:'620',
+            imgHeight:'835'
+        },
+
+    ]
+    
+
+    new Waterfall('js_wrap',{
+        cloum:5,
+        gap:10
+    }).inIt()
+    
+    
+    </script>
+    
+</body>
+</html>
